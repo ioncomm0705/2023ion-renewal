@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>I-ON</title>
+
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template">
+  <meta name="keywords"
+    content="bootstrap, business, creative agency, Material, services, e-commerce, shopping cart, mobile app showcase, multipurpose, shop, ui kit, marketing, seo, landing, html5, css3, javascript, gallery, slider, touch, creative">
+  <meta name="author" content="Createx Studio">
+
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="40x40" href="assets/favicon/favicon-40x40.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#080040">
+  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Vendor Styles-->
+  <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css" />
+  <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css" />
+
+  <!-- Main Theme Styles + Bootstrap-->
+  <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+  <!-- Page loading styles -->
+  <style>
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+    body {
+      --bs-font-sans-serif: margin:0;
+      font-family: 'pretendard';
+    }
+
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+
+    .dark-mode .page-loading {
+      background-color: #0b0f19;
+    }
+
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #9397ad;
+    }
+
+    .dark-mode .page-loading-inner>span {
+      color: #fff;
+      opacity: .6;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #b4b7c9;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    .dark-mode .page-spinner {
+      border-color: rgba(255, 255, 255, .4);
+      border-right-color: transparent;
+    }
+
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <!-- Theme mode -->
+  <script>
+    let mode = window.localStorage.getItem('mode'),
+      root = document.getElementsByTagName('html')[0];
+    if (mode !== null && mode === 'dark') {
+      root.classList.add('dark-mode');
+    } else {
+      root.classList.remove('dark-mode');
+    }
+  </script>
+
+  <!-- Page loading scripts -->
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 1000);
+      };
+    })();
+  </script>
+</head>
+
+<!-- Body -->
+
+<body>
+
+  <!-- Page loading spinner -->
+  <!-- <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div> -->
+
+  <!-- Page wrapper for sticky footer -->
+  <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+  <main class="page-wrapper">
+
+    <script src="assets/js/jquery-3.7.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#header').load("header.html");
+        $('#footer').load("footer.html");
+      });  
+    </script>
+    <!-- Navbar -->
+    <!-- Remove "fixed-top" class to make navigation bar scrollable with the page -->
+    <div id="header"></div>
+
+    <!-- Hero -->
+    <section class="jarallax dark-mode bg-dark" data-jarallax data-speed="0.4"
+      style="min-height: 75vh; margin-top: 70px;">
+      <span class="position-absolute top-0 start-0 w-100 h-100"
+        style="background: radial-gradient(116.18% 118% at 50% 100%, rgba(99, 102, 241, 0.1) 0%, rgba(218, 70, 239, 0.05) 41.83%, rgba(241, 244, 253, 0.07) 82.52%);"></span>
+      <div class="jarallax-img"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.3)), url(assets/img/landing/ceo.jpg);">
+      </div>
+      <div class="d-flex flex-column py-5" style="min-height: 75vh">
+        <div class="container position-relative text-center zindex-5 pt-4 pt-md-5 pb-5 mt-auto mb-auto">
+          <div class="row mt-5">
+            <div class="col-xl-10 mx-auto">
+              <h1 class="display-4">ICE Marketing</h1>
+              <p class="mx-auto mb-md-3 mb-3 pb-xl-2 pb-md-0 pb-sm-2 fs-xl fw-500 text-white"
+                style="max-width: 50rem; opacity: 90%;">
+                데이터 기반 초개인화 마케팅과 통
+              </p>
+              <a href="#" class="btn btn-lg btn-outline-light px-5">바로가기</a>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-down">
+          <a href="#content">
+            <i class="fa-solid fa-chevron-down fa-bounce fa-2xl" style="color:#fff;"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="container py-5 my-md-2 my-lg-4 my-xl-5">
+      <h2 class="pb-md-0 pb-sm-2 text-center mb-2">
+        Marketing Package + 커스트마이징
+      </h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4 py-5 mb-2 mb-sm-3">
+
+        <!-- Item -->
+        <div class="col pt-2 pt-md-0">
+          <div class="text-center px-xl-4">
+            <img src="assets/img/landing/startup/icons/riding-scooter.svg" class="d-inline-block mb-4" width="70"
+              alt="Icon">
+            <h3 class="h4 mb-2">마케터 / MD</h3>
+            <p class="fs-lg mb-0">
+              - 마케팅/분석<br>
+              - 데이터 기반<br>
+              - 초개인화 마케팅
+            </p>
+          </div>
+        </div>
+
+        <!-- Item -->
+        <div class="col pt-2 pt-md-0">
+          <div class="text-center px-xl-4">
+            <img src="assets/img/landing/startup/icons/diamond.svg" class="d-inline-block mb-4" width="70" alt="Icon">
+            <h3 class="h4 mb-2">의사 결정자</h3>
+            <p class="fs-lg mb-0">
+              - 통합 고객 데이터의 수집과 활용
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- Dashboard -->
+    <section class="bg-secondary">
+      <section class="container py-3 py-md-4 py-lg-5 pb-2 mt-lg-2 mt-xl-4 bg-s">
+        <div class="row align-items-center">
+          <div class="rellax col-md-6" data-rellax-percentage="0.5" data-rellax-speed="-0.6"
+            data-disable-parallax-down="lg">
+            <img src="assets/img/landing/saas-1/dashboard.png" class="d-block mx-auto" width="746" alt="Image">
+          </div>
+          <div class="rellax col-md-6 col-xl-5 offset-xl-1 d-flex d-sm-block flex-column" data-rellax-percentage="0.5"
+            data-rellax-speed="0.8" data-disable-parallax-down="lg">
+            <h2 class="pb-3 pt-2 pt-md-0">서비스특징</h2>
+            <ul class="list-unstyled pb-2">
+              <li class="d-flex align-items-center pb-1 mb-2">
+                <i class="bx bx-check-circle text-primary fs-xl me-2"></i>
+                개발이나 퍼블리싱 작업 없이 다중 조건의 캠페인 시나리오를 작성, 실행 가능
+              </li>
+              <li class="d-flex align-items-center pb-1 mb-2">
+                <i class="bx bx-check-circle text-primary fs-xl me-2"></i>
+                고객의 행동, 이력, 채널 등 실시간 이벤트에 기반한 오퍼 전송과 모니터링, 분석
+              </li>
+              <li class="d-flex align-items-center pb-1 mb-2">
+                <i class="bx bx-check-circle text-primary fs-xl me-2"></i>
+                고객 유입에서 조회, 구매, 캠페인 반응에 이르기까지 고객 여정 전반의 데이터를 한곳에서 수집, 분석, 조회
+              </li>
+              <li class="d-flex align-items-center pb-1 mb-2">
+                <i class="bx bx-check-circle text-primary fs-xl me-2"></i>
+                타 채널 데이터, 기존 데이터, 외부 데이터의 연계, 병합 지원
+              </li>
+              <li class="d-flex align-items-center pb-1 mb-2">
+                <i class="bx bx-check-circle text-primary fs-xl me-2"></i>
+                직관적인 데이터 분석 결과로 데이터 기반의 의사결정 지원
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
+
+
+
+    <!-- Features (Icon + Text) -->
+    <section class="container  my-lg-4 my-xl-5 py-lg-4 py-xl-5">
+      <h2 class="h2 text-center pb-4 pb-lg-5">제공기능</h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+            <img src="assets/img/landing/saas-1/features/chat.svg" width="40" alt="Icon">
+          </div>
+          <h3 class="h6 pb-1 mb-2">드래그앤드랍 방식의 캠페인 시나리오 빌더와 EBM, 타겟 마케팅 시나리오 템플릿</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+            <img src="assets/img/landing/saas-1/features/analytics.svg" width="40" alt="Icon">
+          </div>
+          <h3 class="h6 pb-1 mb-2">할인, 쿠폰, 마일리지 등의 마케팅 도구와 캠페인을 쉽게 연계</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+            <img src="assets/img/landing/saas-1/features/bell.svg" width="40" alt="Icon">
+          </div>
+          <h3 class="h6 pb-1 mb-2">이메일, 뉴스레터, 랜딩페이지 등 오퍼 저작용 템플릿</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+            <img src="assets/img/landing/saas-1/features/tasks.svg" width="40" alt="Icon">
+          </div>
+          <h3 class="h6 pb-1 mb-2">디폴트 통계 + 손쉬운 추가 지표 설정</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+            <img src="assets/img/landing/saas-1/features/calendar.svg" width="40" alt="Icon">
+          </div>
+          <h3 class="h6 pb-1 mb-2">기존 판매 데이터, 회원 데이터 가져오기</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+            <img src="assets/img/landing/saas-1/features/add-group.svg" width="40" alt="Icon">
+          </div>
+          <h3 class="h6 pb-1 mb-2">타 채널 데이터 API 연계 지원</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+            <img src="assets/img/landing/saas-1/features/headset.svg" width="40" alt="Icon">
+          </div>
+          <h3 class="h6 pb-1 mb-2">다양한 목적과 형태의 리포트 템플릿</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+          <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+            <img src="assets/img/landing/saas-1/features/shield.svg" width="40" alt="Icon">
+          </div>
+          <h3 class="h6 pb-1 mb-2">고객별 온라인 여정 조회</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- 개요 -->
+    <section class="bg-secondary ">
+      <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+        <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">Marketing Package</h2>
+        <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-3 col-12 col-md-10 mx-auto">
+          타겟팅 대상을 분류후, 원하는 마케팅 시나리오를 제작하여 자동으로 고객에게 콘텐츠를 발송하는 마케팅 오토메이션을 제공합니다. <br class="d-none d-lg-inline">
+        </p>
+        <div class="row row-cols-lg-12">
+          <div class="col-12 shadow-none bg-none position-relative">
+            <img src="assets/img/ice-marketing/ice-marketing1.png" class="b-block rounded-3 vw-100 px-0 px-sm-5">
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- 개요 -->
+    <section class="container text-center py-5 my-2 my-md-4 my-lg-5 ">
+      <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">Marketing Package</h2>
+      <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-3 col-12 col-md-10 mx-auto">
+        다양한 캠페인 이벤트를 통해서 성과측정에 대한 지표를 주요 KPI와 세부 KPI로 나누어서 구분하고,
+        <br class="d-none d-md-inline"> 구매율과 객단가를 기준으로 쇼핑몰에 대한 상태 파악의 주요 모니터링 지표로 활용합니다.
+      </p>
+      <div class="row row-cols-lg-12">
+        <div class="col-12 shadow-none bg-none position-relative">
+          <img src="assets/img/ice-marketing/ice-marketing2.png" class="b-block rounded-3 vw-100 p-0 p-sm-5">
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="container my-5 py-lg-5 py-md-4 pt-2 pb-3">
+      <h2 class="pb-md-0 pb-sm-2 text-center mb-4 mb-sm-5">서비스 주요 기능
+      </h2>
+      <!-- <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-5 col-12 col-md-7 mx-auto">
+                            아이온커뮤니케이션즈는 e-Commerce, CMS, Energy, Sports, SaaS 분야에서 최신트렌드 및 안정적인 구축경험을 바탕으로 성공적인 디지털트랜스포메이션을 지원합니다.
+                          </p> -->
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/ice-marketing/ice-marketing3.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6  pt-md-4 pt-lg-5">
+          <div class="ps-md-4 ms-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Nov 18, 2021</div> -->
+            <h2 class="h3">캠페인 관리 기능
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICE</a>-->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              운영 간 프로모션을 위한 캠페인 설정으로 기획전, 이벤트, 이메일, 광고/배너, SMS/Push 등 다양한 프로모션 채널에 대한 정량적 성과와 효과 측정을 위해 식별 코드 체계 적용 및 모니터링 및 분석.
+            </p>
+            <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 order-md-2 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/ice-marketing/ice-marketing4.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6 order-md-1 pt-md-4 pt-lg-5">
+          <div class="pe-md-4 me-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Nov 9, 2021</div> -->
+            <h2 class="h3">고객 타켓팅 관리
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICS</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              고객 타겟팅 관리 기능을 쿠폰, DM, 개인화 관리 등 고객 선별이 필요한 곳에 공통으로 제공하는 관리 기능 구현
+              <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/ice-marketing/ice-marketing5.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6 pt-md-4 pt-lg-5">
+          <div class="ps-md-4 ms-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Oct 25, 2021</div> -->
+            <h2 class="h3">마케팅 캠페인 성과 측정
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICE Campaign</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              다양한 캠페인 이벤트를 통해서 성과측정에 대한 지표를 주요 KPI와 세부 KPI로 나누어서  구분하고, 구매율과 객단가를 기준으로 쇼핑몰에 대한 상태 파악의 주요 모니터링 지표로 활용
+              <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 문의하기 -->
+    <section class="bg-img py-6">
+      <div class="container text-center py-1 py-md-4 py-lg-5">
+        <h2 class="h1 text-white">무엇을 도와드릴까요?</h2>
+        <p class="lead pb-3 mb-3 text-eee">하단 문의하기를 통해 궁금한 점을 남겨주시면 확인 후 담당자가 상세히 답변드리도록 하겠습니다.</p>
+        <a href="#" class="btn btn-outline-light shadow-secondary btn-lg mb-1 px-5">문의하기</a>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Back to top button -->
+  <a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+  </a>
+
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="assets/vendor/rellax/rellax.min.js"></script>
+  <script src="assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main Theme Script -->
+  <script src="assets/js/theme.min.js"></script>
+</body>
+
+</html>

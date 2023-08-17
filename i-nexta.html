@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>I-ON</title>
+
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template">
+  <meta name="keywords"
+    content="bootstrap, business, creative agency, construction, services, e-commerce, shopping cart, mobile app showcase, multipurpose, shop, ui kit, marketing, seo, landing, html5, css3, javascript, gallery, slider, touch, creative">
+  <meta name="author" content="Createx Studio">
+
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Vendor Styles-->
+  <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css" />
+  <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css" />
+
+  <!-- Main Theme Styles + Bootstrap-->
+  <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+  <!-- Page loading styles -->
+  <style>
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+    body {
+      --bs-font-sans-serif: margin:0;
+      font-family: 'pretendard';
+    }
+
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+
+    .dark-mode .page-loading {
+      background-color: #0b0f19;
+    }
+
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #9397ad;
+    }
+
+    .dark-mode .page-loading-inner>span {
+      color: #fff;
+      opacity: .6;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #b4b7c9;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    .dark-mode .page-spinner {
+      border-color: rgba(255, 255, 255, .4);
+      border-right-color: transparent;
+    }
+
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <!-- Theme mode -->
+  <script>
+    let mode = window.localStorage.getItem('mode'),
+      root = document.getElementsByTagName('html')[0];
+    if (mode !== null && mode === 'dark') {
+      root.classList.add('dark-mode');
+    } else {
+      root.classList.remove('dark-mode');
+    }
+  </script>
+
+  <!-- Page loading scripts -->
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 1000);
+      };
+    })();
+  </script>
+</head>
+
+<!-- Body -->
+
+<body>
+
+  <!-- Page loading spinner -->
+  <!-- <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div> -->
+
+  <!-- Page wrapper for sticky footer -->
+  <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+  <main class="page-wrapper">
+
+    <script src="assets/js/jquery-3.7.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#header').load("header.html");
+        $('#footer').load("footer.html");
+      });  
+    </script>
+    <!-- Navbar -->
+    <!-- Remove "fixed-top" class to make navigation bar scrollable with the page -->
+    <div id="header"></div>
+
+    <!-- Hero section -->
+    <section class="position-relative overflow-hidden" style="min-height: 75vh; margin-top: 70px;">
+      <span class="position-absolute top-0 start-0 d-dark-mode-none d-block w-100 h-100 bg-secondary"></span>
+      <span class="position-absolute top-0 start-0 d-dark-mode-block d-none w-100 h-100"
+        style="background: radial-gradient(84.79% 172.9% at 73.31% 31.4%, rgba(99, 135, 241, .1) 0%, rgba(218, 70, 239, .05) 52.47%, rgba(99, 135, 241, .1) 100%);">
+        <span class="d-block w-100 h-100 bg-position-center bg-size-cover bg-repeat-0"
+          style="background-image: url(assets/img/landing/saas-4/hero-bg.png);"></span>
+      </span>
+      <div class="container position-relative mt-5 py-xl-5 pt-md-3 zindex-5">
+        <div class="row justify-content-md-start justify-content-center flex-md-nowrap">
+          <div
+            class="col-xl-5 col-md-6 col-sm-10 d-flex flex-column justify-content-center mb-md-5 mb-md-4 mb-3 pb-xl-5 pb-lg-4">
+            <div class="text-md-start text-center">
+              <h1 class="h1 mb-lg-4 mb-3">INEXTA
+              </h1>
+              <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">
+                INEXTA는 B2C, B2B, B2E등 공급사, 판매사, 플랫폼, 사용자 간 다양한 서비스 기능을 제공하는 오픈소스/MSA 기반의 e-Commerce 통합 개발 프레임워크 입니다.
+              </p>
+              <a href="#" class="btn btn-lg btn-primary">문의하기</a>
+            </div>
+            <ul
+              class="list-unstyled row row-cols-2 gy-sm-2 gy-1 gx-sm-4 gx-2 mt-lg-5 mt-4 mx-md-0 mx-auto pt-lg-0 pt-md-2 mb-md-5 mb-4 pb-xl-4 pb-lg-3 pb-md-2 pb-sm-0 pb-2 text-nowrap"
+              style="max-width: 23.625rem;">
+              <li class="col d-flex align-items-start">
+                <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+                효율적인 콘텐츠 관리
+              </li>
+              <li class="col d-flex align-items-start">
+                <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+                운영 비용절감
+              </li>
+              <li class="col d-flex align-items-start">
+                <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+                체계적인 워크플로우
+              </li>
+              <li class="col d-flex align-items-start">
+                <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+                다양한 채널의 통합관리
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-12 offset-xl-05 d-flex">
+            <div class="align-self-end ms-xl-0 ms-md-4 p-lg-2 p-sm-3 p-2 rounded-4 overflow-hidden"
+              style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
+              <img src="assets/img/ics/ics1.png" width="1122" alt="Layer" class="rounded-4"
+                style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <span class="position-absolute bottom-0 start-0 w-100">
+          <span class="d-dark-mode-none d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
+          <span class="d-dark-mode-block d-none w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-dark"></span>
+        </span> -->
+    </section>
+
+    <!-- 개요 -->
+    <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+      <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">INEXTA 개요</h2>
+      <div class="row row-cols-lg-12">
+        <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+          <img src="assets/img/inexta/inexta1.png" class="b-block rounded-3  vw-100 px-5">
+          <p class="mt-4 mb-3 mb-lg-0 text-start ">
+            INEXTA는 B2C, B2B, B2E등 공급사, 판매사, 플랫폼, 사용자 간 다양한 서비스 기능을 제공하는 오픈소스/MSA 기반의 e-Commerce 통합 개발 프레임워크 입니다. <br>
+            Headless Commerce를 지향하는 INEXTA는 다양한 Frontend 기술들을 API를 통해, 환경이나 디바이스 제약없이 간편한 연동이 가능합니다.<br>
+            또한, MSA(Microservice Architecture)를 지향하고, DevOps 운영환경을 지원해 안정적이고 한결같은(Seamless)서비스 품질을 보장합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="container my-5 py-lg-5 py-md-4 pt-2 pb-3">
+      <h2 class="pb-md-0 pb-sm-2 text-center mb-2">INEXTA 도입 기대효과
+      </h2>
+      <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-5 col-12 col-md-10 mx-auto">
+        e-Commerce 전 영역에 대응하는 MSA 이머커스 플랫폼
+      </p>
+      <!-- <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-5 col-12 col-md-7 mx-auto">
+                      아이온커뮤니케이션즈는 e-Commerce, CMS, Energy, Sports, SaaS 분야에서 최신트렌드 및 안정적인 구축경험을 바탕으로 성공적인 디지털트랜스포메이션을 지원합니다.
+                    </p> -->
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/inexta/inexta14.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6  pt-md-4 pt-lg-5">
+          <div class="ps-md-4 ms-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Nov 18, 2021</div> -->
+            <h2 class="h3">중견급 이상 범용 이커머스/오픈마켓 비즈니스 플로우 탑재로 완결성 높은 서비스 제공
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICE</a>-->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              초기 구축비용 절감 / 빠른 구축 기간 / 고객 맞춤 컨설팅<br>
+              스프링부트 기반의 이커머스 프레임웍 제공 / 가이드에 따른 프레임웍 변경/수정 가능<br>
+              다양한 고객의 비즈니스 로직/프로세스에 맞는 유연한 수정가능
+            </p>
+            <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 order-md-2 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/inexta/inexta15.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6 order-md-1 pt-md-4 pt-lg-5">
+          <div class="pe-md-4 me-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Nov 9, 2021</div> -->
+            <h2 class="h3">업종과 규모에 관계없이 최적화된 서비스 설계 및 구축
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICS</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              SaaS 플랫폼 도입으로 초기 구축 비용 절감<br>
+              다양한 형태의 신속한 인프라 구성<br>
+              오토스케일링(Auto Scaling)을 통한 무 중단 시스템 확장
+              <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/inexta/inexta16.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6 pt-md-4 pt-lg-5">
+          <div class="ps-md-4 ms-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Oct 25, 2021</div> -->
+            <h2 class="h3">강력한 Java 스프링부트 기반 이커머스 플랫폼
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICE Campaign</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              대용량 처리가 가능한 고성능 플랫폼<br>
+              강력한 Java 설계로 쇼핑몰의 안전성과 보안성 강화<br>
+              Java Spring/MyBatis Framework 적용
+              <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 order-md-2 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/inexta/inexta17.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6 order-md-1 pt-md-4 pt-lg-5">
+          <div class="pe-md-4 me-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Aug 23, 2021</div> -->
+            <h2 class="h3">라이브 쇼핑부터 상품 추천까지 확장 기능 제공
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">Widsign</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              WebRTC(Web Real-Time Communication)를 통한<br>
+              라이브 스트리밍과 채팅 및 상품 구매 가능<br>
+              상품 추천, 관련 상품 추천 등 개인화 영역 특화 구성<br>
+              SNS 회원가입, 간편 로그인 기능 적용
+
+            </p>
+            <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/inexta/inexta18.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6 pt-md-4 pt-lg-5">
+          <div class="ps-md-4 ms-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Oct 25, 2021</div> -->
+            <h2 class="h3">운영과 마케팅을 위한/ 최적의 자체 제공 솔루션
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICE Campaign</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              상품과 연계된 기획전, 이벤트 등 다양한 형태의 컨텐츠 생산 가능<br>
+              품질 손상 없는 상품 이미지 자동 변환 (리사이징 & 크롭)<br>
+              Google Analytics, Firebase 등 통계 시스템 연동 제공
+              <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration -->
+    <section class="container mb-5 pb-lg-5 pb-md-4 pb-3">
+      <h2 class="h2 mb-lg-4 mb-3 text-center">INEXTA 구축사례
+      </h2>
+      <!-- Swiper slider -->
+      <div class="swiper mt-n2 mb-xl-2 mx-n2" data-swiper-options='{
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          },
+          "breakpoints": {
+            "0": {
+              "slidesPerView": 2,
+              "spaceBetween": 4
+            },
+            "600": {
+              "slidesPerView": 3,
+              "spaceBetween": 16
+            },
+            "991": {
+              "slidesPerView": 4,
+              "spaceBetween": 24
+            },
+            "1200": {
+              "slidesPerView": 5,
+              "spaceBetween": 38
+            }
+          }
+        }'>
+        <div class="swiper-wrapper">
+
+          <!-- Swiper item -->
+          <div class="swiper-slide h-auto py-2">
+            <a href="#" class="card card-body card-hover h-100 border-0 shadow-sm rounded-pill">
+              <img src="assets/img/inexta/inexta_logo1.png" class="my-sm-0 my-1 mx-auto" width="164" alt="Brand">
+            </a>
+          </div>
+
+          <!-- Swiper item -->
+          <div class="swiper-slide h-auto py-2">
+            <a href="#" class="card card-body card-hover h-100 border-0 shadow-sm rounded-pill">
+              <img src="assets/img/inexta/inexta_logo2.png" class="my-sm-0 my-1 mx-auto mb-n2" width="164" alt="Brand">
+            </a>
+          </div>
+
+          <!-- Swiper item -->
+          <div class="swiper-slide h-auto py-2">
+            <a href="#" class="card card-body card-hover h-100 border-0 shadow-sm rounded-pill">
+              <img src="assets/img/inexta/inexta_logo3.png" class="my-sm-0 my-1 mx-auto" width="164" alt="Brand">
+            </a>
+          </div>
+
+          <!-- Swiper item -->
+          <div class="swiper-slide h-auto py-2">
+            <a href="#" class="card card-body card-hover h-100 border-0 shadow-sm rounded-pill">
+              <img src="assets/img/inexta/inexta_logo4.png" class="my-sm-0 my-1 mx-auto" width="164" alt="Brand">
+            </a>
+          </div>
+
+          <!-- Swiper item -->
+          <div class="swiper-slide h-auto py-2">
+            <a href="#" class="card card-body card-hover h-100 border-0 shadow-sm rounded-pill">
+              <img src="assets/img/inexta/inexta_logo5.png" class="my-sm-0 my-1 mx-auto" width="164" alt="Brand">
+            </a>
+          </div>
+
+          <!-- Swiper item -->
+          <div class="swiper-slide h-auto py-2">
+            <a href="#" class="card card-body card-hover h-100 border-0 shadow-sm rounded-pill">
+              <img src="assets/img/inexta/inexta_logo6.png" class="my-sm-0 my-1 mx-auto" width="164" alt="Brand">
+            </a>
+          </div>
+        </div>
+
+        <!-- Pagination (bullets) -->
+        <div class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
+      </div>
+    </section>
+
+    <!-- 개요 -->
+    <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+      <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">INEXTA Architecture 개요</h2>
+      <div class="row row-cols-lg-12">
+        <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+          <img src="assets/img/inexta/inexta2.png" class="b-block rounded-3  vw-100 px-5">
+          <!-- <p class="mt-4 mb-3 mb-lg-0 text-start ">
+                INEXTA는 B2C, B2B, B2E등 공급사, 판매사, 플랫폼, 사용자 간 다양한 서비스 기능을 제공하는 오픈소스/MSA 기반의 e-Commerce 통합 개발 프레임워크 입니다. <br>
+                Headless Commerce를 지향하는 INEXTA는 다양한 Frontend 기술들을 API를 통해, 환경이나 디바이스 제약없이 간편한 연동이 가능합니다.<br>
+                또한, MSA(Microservice Architecture)를 지향하고, DevOps 운영환경을 지원해 안정적이고 한결같은(Seamless)서비스 품질을 보장합니다.
+              </p> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 개요 -->
+    <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+      <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">INEXTA Architecture 전체구성도</h2>
+      <div class="row row-cols-lg-12">
+        <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+          <img src="assets/img/inexta/inexta3.png" class="b-block rounded-3  vw-100 px-5">
+          <p class="mt-4 mb-3 mb-lg-0 text-start ">
+            pre-setup 최적화　상태의　도해이며，고객사의　상황　및　필요에　의한　협의에　따른　구조변경은　가능합니다．<br>
+            （변경　범위　및　기간，투입공수에　따른　세부적　사항은　별도　문의주시기　바랍니다．）
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="container my-5 py-lg-5 py-md-4 pt-2 pb-3">
+      <h2 class="pb-md-0 pb-sm-2 text-center mb-4 mb-sm-5">서비스별 SW 아키텍처 구성
+      </h2>
+      <!-- <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-5 col-12 col-md-7 mx-auto">
+                      아이온커뮤니케이션즈는 e-Commerce, CMS, Energy, Sports, SaaS 분야에서 최신트렌드 및 안정적인 구축경험을 바탕으로 성공적인 디지털트랜스포메이션을 지원합니다.
+                    </p> -->
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/inexta/inexta4.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6  pt-md-4 pt-lg-5">
+          <div class="ps-md-4 ms-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Nov 18, 2021</div> -->
+            <h2 class="h3">공통서비스
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICE</a>-->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              공통 시스템<br>
+              공통 서비스<br>
+              공통 통계
+            </p>
+            <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 order-md-2 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/inexta/inexta5.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6 order-md-1 pt-md-4 pt-lg-5">
+          <div class="pe-md-4 me-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Nov 9, 2021</div> -->
+            <h2 class="h3">회원서비스
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICS</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              사용자 인증을 위한 서버 구성(OAuth2)<br>
+              사용자 인증/고객/회원 관리
+              <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/inexta/inexta6.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6 pt-md-4 pt-lg-5">
+          <div class="ps-md-4 ms-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Oct 25, 2021</div> -->
+            <h2 class="h3">상품서비스
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICE Campaign</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              사용자 요청이 많은 업무 Cache 이용(Redis)<br>
+              상품/전시/쿠폰/프로모션
+              <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 order-md-2 pb-1 mb-3 pb-md-0 mb-md-0">
+          <img src="assets/img/inexta/inexta7.png" class="rounded-3" width="600" alt="Image">
+        </div>
+        <div class="col-md-6 order-md-1 pt-md-4 pt-lg-5">
+          <div class="pe-md-4 me-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Aug 23, 2021</div> -->
+            <h2 class="h3">백오피스 서비스
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">Widsign</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              FrontEnd(관리자UI)<br>
+              BackEnd Service<br>
+              관리자/공급사<br>
+              공통/주문/상품<br>
+              배치
+            </p>
+            <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 개요 -->
+    <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+      <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">서비스 모듈 간 독립실행 및 조합 실행
+      </h2>
+      <div class="row row-cols-lg-12">
+        <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+          <img src="assets/img/inexta/inexta8.png" class="b-block rounded-3  vw-100 px-5">
+          <p class="mt-4 mb-3 mb-lg-0 text-start ">
+            INEXTA는 공통(Core, Util, Auth) 모듈을 기반으로 각 Service 모듈을 독립적으로 실행될 수 있으며,
+            Service 모듈을 Grouping하여 실행할 수도 있습니다.
+
+          </p>
+        </div>
+      </div>
+      <div class="row row-cols-lg-12">
+        <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+          <img src="assets/img/inexta/inexta9.png" class="b-block rounded-3  vw-100 px-5">
+          <p class="mt-4 mb-3 mb-lg-0 text-start ">
+            INEXTA는 Service 모듈을 조합하여 다양한 MSA 서비스를 구성할 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 개요 -->
+    <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+      <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">MSA Database 구성
+      </h2>
+      <div class="row row-cols-lg-12">
+        <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+          <img src="assets/img/inexta/inexta10.png" class="b-block rounded-3  vw-100 px-5">
+          <p class="mt-4 mb-3 mb-lg-0 text-start ">
+            INEXTA는 Service 모듈에 따라 DB를 분리 시 소스 수정이 필요하지 않습니다.<br>
+            DB 분리 시 다른 업무에서 필요한 테이블은 Kafka 를 통해 복제하여 소스에 영향을 주지 않습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 개요 -->
+    <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+      <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">빌드 및 배포
+      </h2>
+      <div class="row row-cols-lg-12">
+        <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+          <img src="assets/img/inexta/inexta11.png" class="b-block rounded-3  vw-100 px-5">
+          <p class="mt-4 mb-3 mb-lg-0 text-start ">
+            Code PipeLine: Source → Build → Deploy 과정
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 개요 -->
+    <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+      <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">Log 처리 및 관리
+      </h2>
+      <div class="row row-cols-lg-12">
+        <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+          <img src="assets/img/inexta/inexta12.png" class="b-block rounded-3  vw-100 px-5">
+          <p class="mt-4 mb-3 mb-lg-0 text-start ">
+            <b>[Log 종류별 처리]</b><br>
+            1. 중요(회원/결제/..) Log: Kafka<br>
+            - 회원/결제 등 변경이력을 DB 저장 필요한 Log용(Kafka Appender)<br>
+            - Kafka에 전송된 Log를 읽어 DB 저장(Kafka Log To Database: Log 처리 전용 Application)
+            <br><br>
+            2. 개발자용 Log: ELK(Logstash/ElasticSearch/Kibana)<br>
+            - Application Log를 Logstash로 전송
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- 문의하기 -->
+    <section class="bg-img py-6">
+      <div class="container text-center py-1 py-md-4 py-lg-5">
+        <h2 class="h1 text-white">무엇을 도와드릴까요?</h2>
+        <p class="lead pb-3 mb-3 text-eee">하단 문의하기를 통해 궁금한 점을 남겨주시면 확인 후 담당자가 상세히 답변드리도록 하겠습니다.</p>
+        <a href="#" class="btn btn-outline-light shadow-secondary btn-lg mb-1 px-5">문의하기</a>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Back to top button -->
+  <a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+  </a>
+
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="assets/vendor/rellax/rellax.min.js"></script>
+  <script src="assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main Theme Script -->
+  <script src="assets/js/theme.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>I-ON</title>
+
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template">
+  <meta name="keywords"
+    content="bootstrap, business, creative agency, Material, services, e-commerce, shopping cart, mobile app showcase, multipurpose, shop, ui kit, marketing, seo, landing, html5, css3, javascript, gallery, slider, touch, creative">
+  <meta name="author" content="Createx Studio">
+
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Vendor Styles-->
+  <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css" />
+  <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css" />
+
+  <!-- Main Theme Styles + Bootstrap-->
+  <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+  <!-- Page loading styles -->
+  <style>
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+    body {
+      --bs-font-sans-serif: margin:0;
+      font-family: 'pretendard';
+    }
+
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+
+    .dark-mode .page-loading {
+      background-color: #0b0f19;
+    }
+
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #9397ad;
+    }
+
+    .dark-mode .page-loading-inner>span {
+      color: #fff;
+      opacity: .6;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #b4b7c9;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    .dark-mode .page-spinner {
+      border-color: rgba(255, 255, 255, .4);
+      border-right-color: transparent;
+    }
+
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <!-- Theme mode -->
+  <script>
+    let mode = window.localStorage.getItem('mode'),
+      root = document.getElementsByTagName('html')[0];
+    if (mode !== null && mode === 'dark') {
+      root.classList.add('dark-mode');
+    } else {
+      root.classList.remove('dark-mode');
+    }
+  </script>
+
+  <!-- Page loading scripts -->
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 1000);
+      };
+    })();
+  </script>
+</head>
+
+<!-- Body -->
+
+<body>
+
+  <!-- Page loading spinner -->
+  <!-- <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div> -->
+
+  <!-- Page wrapper for sticky footer -->
+  <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+  <main class="page-wrapper">
+
+    <script src="assets/js/jquery-3.7.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#header').load("header.html");
+        $('#footer').load("footer.html");
+      });  
+    </script>
+    <!-- Navbar -->
+    <!-- Remove "fixed-top" class to make navigation bar scrollable with the page -->
+    <div id="header"></div>
+
+    <!-- Hero -->
+    <section class="jarallax dark-mode bg-dark" data-jarallax data-speed="0.4"
+      style="min-height: 75vh; margin-top: 70px;">
+      <span class="position-absolute top-0 start-0 w-100 h-100"
+        style="background: radial-gradient(116.18% 118% at 50% 100%, rgba(99, 102, 241, 0.1) 0%, rgba(218, 70, 239, 0.05) 41.83%, rgba(241, 244, 253, 0.07) 82.52%);"></span>
+      <div class="jarallax-img"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.3)), url(assets/img/landing/ceo.jpg);">
+      </div>
+      <div class="d-flex flex-column py-5" style="min-height: 75vh">
+        <div class="container position-relative text-center zindex-5 pt-4 pt-md-5 pb-5 mt-auto mb-auto">
+          <div class="row mt-5">
+            <div class="col-xl-10 mx-auto">
+              <h1 class="display-4">ICE5</h1>
+              <h2>Composable Application Platform</h2>
+              <p class="mx-auto mb-md-3 mb-3 pb-xl-2 pb-md-0 pb-sm-2 fs-xl fw-500 text-white"
+                style="max-width: 50rem; opacity: 90%;">
+                서비스 모듈 기반 개발 플랫폼으로 새로운 개발 환경을 제공합니다. 
+              </p>
+              <a href="#" class="btn btn-lg btn-outline-light px-5">바로가기</a>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-down">
+          <a href="#content">
+            <i class="fa-solid fa-chevron-down fa-bounce fa-2xl" style="color:#fff;"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+      <!-- Feature section (Trading) -->
+      <section class="container py-5 my-md-2 my-lg-4 my-xl-5">
+        <h2 class="pb-md-0 pb-sm-2 text-center mb-2">서비스 모듈 기반 개발 플랫폼
+        </h2>
+        <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-5 col-12 col-md-10 mx-auto">
+          Microservice Architecture를 유연하게 활용하는 Composable Application Platform
+        </p>
+        <!-- Text -->
+        <ul class="list-unstyled d-flex flex-wrap justify-content-center mb-5">
+
+          <li class="d-flex fs-6 mx-3 mt-2 mt-sm-3">
+            <i class="bx bx-check  text-primary mt-1 me-2"></i>
+            <span>ICE(I-ON Content Ecosystem)는 <strong class="text-primary mx-1">2010년 ICafe로 시작하여 2020년 ICE 4.0, 2023년 ICE 5.0 으로 수년간 업그레이드 되어 온 플랫폼</strong>입니다.</span>
+          </li>
+          <li class="d-flex fs-6 mx-3 mt-2 mt-sm-3">
+            <i class="bx bx-check text-primary mt-1 me-2"></i>
+            <span>특정 기능에 구현에 필요한 <strong class="text-primary mx-1">구성 요소(Schema, API, BO, FO…)들을 모듈화</strong>하여 원하는 기능만 적용할수 있습니다.</span>
+          </li>
+        </ul>
+
+        <!-- Parallax gfx -->
+        <div class="position-relative  mb-3 mb-md-4">
+          <img src="assets/img/ice5/ice1.png" class="d-block mx-auto" style="border-radius: 10px; box-shadow: 0 1.875rem 7.5rem -.625rem rgba(124,125,152, .2);" alt="Dashboard">
+        </div>
+      </section>
+
+      <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+        <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">ICE5 - XaaS Platform</h2>
+        <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-3 col-12 col-md-10 mx-auto">
+          ICE5는 설치형 ICE 플랫폼과 이를 확장하기 위한 XaaS(Anything as a Service) 플랫폼을 결합한 형태로<br class="d-none d-lg-inline">  하이브리드 형태의 새로운 서비스 모듈 기반의 개발 플랫폼으로 적용할수 있습니다.
+        </p>
+        <div class="row row-cols-lg-12">
+          <div class="col-12 shadow-none bg-none position-relative">
+            <img src="assets/img/ice5/ice2.png" class="b-block rounded-3 vw-100 px-0 px-sm-5">
+          </div>
+          <div class="row g-2 g-lg-3 g-xl-4 pb-md-3 pb-lg-5">
+            <!-- Item -->
+            <div class="col-md-4 col-12 mt-0">
+              <div class="card h-100 bg-transparent border-0 py-4 py-md-0">
+                <div class="card-body p-1">
+                  <h3 class="h5">SaaS 서비스제공</h3>
+                  <p class="fs-6 mb-0">
+                    - CMS 및 이커머스 기능을 가입형 서비스로 제공<br>
+                    - Low-Code 개발로 확장 가능
+                  </p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Item -->
+            <div class="col-md-4 col-12 mt-0 ">
+              <div class="card h-100 bg-transparent border-0 py-4 py-md-0">
+                <div class="card-body p-1">
+                  <h3 class="h5">DaaS 개발 플랫폼</h3>
+                  <p class="fs-6 mb-0">
+                    - 필요한 기능을 Composable Application으로 제공<br>
+                    - DevOps 서비스를 이용하여 개발 및 운영 
+                  </p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Item -->
+            <div class="col-md-4 col-12  mt-0 ">
+              <div class="card h-100 bg-transparent border-0 py-4 py-md-0">
+                <div class="card-body p-1">
+                  <h3 class="h5">On-Premise 개발 프레임워크</h3>
+                  <p class="fs-6 mb-0">
+                    - 필요한 기능을 선택하여 코드 생성<br>
+                    - 생성된 코드를 이용하여 자체 개발 및 운영
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+          <!-- 개요 -->
+    <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+      <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">Architecture
+      </h2>
+      <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-5 col-12 col-md-7 mx-auto">
+        필요한 패키지를 선택하여 Feature를 설정하고 로우코드 기반 개발, 배포 및 운영이 가능하도록 구성 가능합니다. 
+      </p>
+      <div class="row row-cols-lg-12">
+        <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+          <img src="assets/img/ice5/ice3.png" class="b-block vw-100">
+        </div>
+    </section>
+
+
+          <!-- 개요 -->
+          <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+            <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">Digital Experience Platform
+            </h2>
+            <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-5 col-12 col-md-7 mx-auto">
+              Contents Package, Commerce Package, Marketing Package등의 Full Package Features에서 모듈별<br> Composable Application 제공이 가능합니다.<br>
+            </p>
+            <div class="row row-cols-lg-12">
+              <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+                <img src="assets/img/ice5/ice4.png" class="b-block vw-100">
+              </div>
+          </section>
+
+          
+
+
+      <!-- Features (Icon + Text) -->
+      <section class="container mb-5 pb-5">
+        <h2 class="h1 text-center pb-4 pb-lg-5">Low Code Development를 위한<br>End-to-End No/Low Code 개발 도구 제공
+        </h2>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+            <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+              <img src="assets/img/landing/saas-1/features/chat.svg" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 pb-1 mb-2">컴포넌트 웹페이지 제작 툴
+            </h3>
+            <p class="fs-sm">                      
+              - Smart Editor<br>
+              - 다양한 디바이스 형태별 미리보기 제공<br>
+              - Drag & Drop
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+            <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+              <img src="assets/img/landing/saas-1/features/analytics.svg" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 pb-1 mb-2">Biz 로직 개발 지원 툴
+            </h3>
+            <p class="fs-sm">                      
+              - 7종의 Flow 컴포넌트 제공<br>
+              - API Gateway 연계<br>
+              - Event Process 연계</p>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+            <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+              <img src="assets/img/landing/saas-1/features/bell.svg" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 pb-1 mb-2">Data Modeling 지원툴
+            </h3>
+            <p class="fs-sm">
+              - 스키마 및 MSA 구성관리<br>
+              - Data Indexing<br>
+              - Data Source<br>
+              - Data Encryption<br>
+              - Secure 관리
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 text-center pb-md-2 mb-3 mb-lg-4">
+            <div class="d-inline-block bg-secondary rounded-circle p-3 mb-4">
+              <img src="assets/img/landing/saas-1/features/tasks.svg" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 pb-1 mb-2">API Endpoint 관리 툴</h3>
+            <p class="fs-sm">
+              - 인증 및 권한 설정<br>
+              - 보안 설정(SSL, 암호화 등)<br>
+              - API Aggregation 설정
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+    <!-- 문의하기 -->
+    <section class="bg-img py-6">
+      <div class="container text-center py-1 py-md-4 py-lg-5">
+        <h2 class="h1 text-white">무엇을 도와드릴까요?</h2>
+        <p class="lead pb-3 mb-3 text-eee">하단 문의하기를 통해 궁금한 점을 남겨주시면 확인 후 담당자가 상세히 답변드리도록 하겠습니다.</p>
+        <a href="#" class="btn btn-outline-light shadow-secondary btn-lg mb-1 px-5">문의하기</a>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Back to top button -->
+  <a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+  </a>
+
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="assets/vendor/rellax/rellax.min.js"></script>
+  <script src="assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main Theme Script -->
+  <script src="assets/js/theme.min.js"></script>
+</body>
+
+</html>

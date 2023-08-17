@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>I-ON</title>
+
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template">
+  <meta name="keywords"
+    content="bootstrap, business, creative agency, construction, services, e-commerce, shopping cart, mobile app showcase, multipurpose, shop, ui kit, marketing, seo, landing, html5, css3, javascript, gallery, slider, touch, creative">
+  <meta name="author" content="Createx Studio">
+
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Vendor Styles-->
+  <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css" />
+  <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css" />
+
+  <!-- Main Theme Styles + Bootstrap-->
+  <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+  <!-- Page loading styles -->
+  <style>
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+    body {
+      --bs-font-sans-serif: margin:0;
+      font-family: 'pretendard';
+    }
+
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+
+    .dark-mode .page-loading {
+      background-color: #0b0f19;
+    }
+
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #9397ad;
+    }
+
+    .dark-mode .page-loading-inner>span {
+      color: #fff;
+      opacity: .6;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #b4b7c9;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    .dark-mode .page-spinner {
+      border-color: rgba(255, 255, 255, .4);
+      border-right-color: transparent;
+    }
+
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <!-- Theme mode -->
+  <script>
+    let mode = window.localStorage.getItem('mode'),
+      root = document.getElementsByTagName('html')[0];
+    if (mode !== null && mode === 'dark') {
+      root.classList.add('dark-mode');
+    } else {
+      root.classList.remove('dark-mode');
+    }
+  </script>
+
+  <!-- Page loading scripts -->
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 1000);
+      };
+    })();
+  </script>
+</head>
+
+<!-- Body -->
+
+<body>
+  <!-- Page loading spinner -->
+  <!-- <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div> -->
+
+  <!-- Page wrapper for sticky footer -->
+  <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+  <main class="page-wrapper">
+    <script src="assets/js/jquery-3.7.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#header').load("header.html");
+        $('#footer').load("footer.html");
+      });  
+    </script>
+    <!-- Navbar -->
+    <!-- Remove "fixed-top" class to make navigation bar scrollable with the page -->
+    <div id="header"></div>
+
+    <!-- Hero -->
+    <section class="jarallax dark-mode bg-dark" data-jarallax data-speed="0.4"
+      style="min-height: 75vh; margin-top: 70px;">
+      <span class="position-absolute top-0 start-0 w-100 h-100"
+        style="background: radial-gradient(116.18% 118% at 50% 100%, rgba(99, 102, 241, 0.1) 0%, rgba(218, 70, 239, 0.05) 41.83%, rgba(241, 244, 253, 0.07) 82.52%);"></span>
+      <div class="jarallax-img"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.3)), url(assets/img/landing/notice.jpg);">
+      </div>
+      <div class="d-flex flex-column py-5" style="min-height: 75vh">
+        <div class="container position-relative text-center zindex-5 pt-4 pt-md-5 pb-5 mt-auto mb-auto">
+          <div class="row mt-5">
+            <div class="col-xl-10 mx-auto">
+              <h1 class="display-4">공지사항</h1>
+              <p class="mx-auto mb-md-3 mb-3 pb-xl-2 pb-md-0 pb-sm-2 fs-xl fw-500 text-white"
+                style="max-width: 50rem; opacity: 90%;">
+                아이온커뮤니케이션즈의 최신 정보를 안내해 드립니다.
+              </p>
+              <!-- <a href="#" class="btn btn-lg btn-outline-secondary px-5">바로가기</a> -->
+            </div>
+          </div>
+        </div>
+        <div class="scroll-down">
+          <a href="#content">
+            <i class="fa-solid fa-chevron-down fa-bounce fa-2xl" style="color:#fff;"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Our Clients Say About Us -->
+    <section class="container mb-5 py-5 pb-lg-5 pb-md-4 pb-3">
+      <div class="mb-xl-3 4 py-lg-5">
+        <h2 class=" text-center pb-2 pb-lg-0 mb-4 mb-lg-5">공지사항</h2>
+        <!-- Tabs -->
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="col-lg-1  text-center py-3 text-truncate md-width60">글번호</th>
+                <th scope="col" class="col text-center py-3 ">제목</th>
+                <th scope="col" class="col-lg-2 text-center py-3 md-display-none">작성일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-center py-3 fw-500 text-606060">8</th>
+                <td class="py-3 text-truncate fw-500 ">
+                  <a href="#" target="_self" class="text-decoration-none text-nav">
+                    분할보고총회에 갈음하는 공고
+                  </a>
+                </td>
+                <td class="text-center py-3 md-display-none">2022.08.01</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center py-3 fw-500 text-606060">7</th>
+                <td class="py-3 text-truncate fw-500">
+                  <a href="#" target="_self" class="text-decoration-none text-nav ss">
+                    분할보고총회에 갈음하는 공고
+                  </a>
+                </td>
+                <td class="text-center py-3 md-display-none">2022.08.01</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center py-3 fw-500 text-606060">6</th>
+                <td class="py-3 text-truncate fw-500">
+                  <a href="#" target="_self" class="text-decoration-none text-nav">
+                    분할보고총회에 갈음하는 공고
+                  </a>
+                </td>
+                <td class="text-center py-3 md-display-none">2022.08.01</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center py-3 fw-500 text-606060">5</th>
+                <td class="py-3 text-truncate fw-500">
+                  <a href="#" target="_self" class="text-decoration-none text-nav">
+                    분할보고총회에 갈음하는 공고
+                  </a>
+                </td>
+                <td class="text-center py-3 md-display-none">2022.08.01</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center py-3 fw-500 text-606060">4</th>
+                <td class="py-3 text-truncate fw-500">
+                  <a href="#" target="_self" class="text-decoration-none text-nav">
+                    분할보고총회에 갈음하는 공고
+                  </a>
+                </td>
+                <td class="text-center py-3 md-display-none">2022.08.01</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center py-3 fw-500 text-606060">3</th>
+                <td class="py-3 text-truncate fw-500">
+                  <a href="#" target="_self" class="text-decoration-none text-nav">
+                    분할보고총회에 갈음하는 공고
+                  </a>
+                </td>
+                <td class="text-center py-3 md-display-none">2022.08.01</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center py-3 fw-500 text-606060">2</th>
+                <td class="py-3 text-truncate fw-500">
+                  <a href="#" target="_self" class="text-decoration-none text-nav">
+                    분할보고총회에 갈음하는 공고
+                  </a>
+                </td>
+                <td class="text-center py-3 md-display-none">2022.08.01</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center py-3 fw-500 text-606060">1</th>
+                <td class="py-3 text-truncate fw-500">
+                  <a href="#" target="_self" class="text-decoration-none text-nav">
+                    분할보고총회에 갈음하는 공고
+                  </a>
+                </td>
+                <td class="text-center py-3 md-display-none">2022.08.01</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 문의하기 -->
+    <section class="bg-img py-6">
+      <div class="container text-center py-1 py-md-4 py-lg-5">
+        <h2 class="h1 text-white">무엇을 도와드릴까요?</h2>
+        <p class="lead pb-3 mb-3 text-eee">하단 문의하기를 통해 궁금한 점을 남겨주시면 확인 후 담당자가 상세히 답변드리도록 하겠습니다.</p>
+        <a href="#" class="btn btn-outline-light shadow-secondary btn-lg mb-1 px-5">문의하기</a>
+      </div>
+    </section>
+
+  </main>
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Back to top button -->
+  <a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+  </a>
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="assets/vendor/rellax/rellax.min.js"></script>
+  <script src="assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main Theme Script -->
+  <script src="assets/js/theme.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>I-ON</title>
+
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template">
+  <meta name="keywords"
+    content="bootstrap, business, creative agency, construction, services, e-commerce, shopping cart, mobile app showcase, multipurpose, shop, ui kit, marketing, seo, landing, html5, css3, javascript, gallery, slider, touch, creative">
+  <meta name="author" content="Createx Studio">
+
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Vendor Styles-->
+  <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css" />
+  <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css" />
+
+  <!-- Main Theme Styles + Bootstrap-->
+  <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+  <!-- Page loading styles -->
+  <style>
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+    body {
+      --bs-font-sans-serif: margin:0;
+      font-family: 'pretendard';
+    }
+
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+
+    .dark-mode .page-loading {
+      background-color: #0b0f19;
+    }
+
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #9397ad;
+    }
+
+    .dark-mode .page-loading-inner>span {
+      color: #fff;
+      opacity: .6;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #b4b7c9;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    .dark-mode .page-spinner {
+      border-color: rgba(255, 255, 255, .4);
+      border-right-color: transparent;
+    }
+
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <!-- Theme mode -->
+  <script>
+    let mode = window.localStorage.getItem('mode'),
+      root = document.getElementsByTagName('html')[0];
+    if (mode !== null && mode === 'dark') {
+      root.classList.add('dark-mode');
+    } else {
+      root.classList.remove('dark-mode');
+    }
+  </script>
+
+  <!-- Page loading scripts -->
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 1000);
+      };
+    })();
+  </script>
+</head>
+
+<!-- Body -->
+
+<body>
+
+  <!-- Page loading spinner -->
+  <!-- <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div> -->
+
+  <!-- Page wrapper for sticky footer -->
+  <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+  <main class="page-wrapper">
+
+    <script src="assets/js/jquery-3.7.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#header').load("header.html");
+        $('#footer').load("footer.html");
+      });  
+    </script>
+    <!-- Navbar -->
+    <!-- Remove "fixed-top" class to make navigation bar scrollable with the page -->
+    <div id="header"></div>
+
+    <!-- Hero -->
+
+    <!-- Hero -->
+    <section class="dark-mode position-relative jarallax pb-xl-3" data-jarallax data-speed="0.4" style="min-height: 75vh; margin-top: 70px;">
+
+      <!-- Parallax img -->
+      <div class="jarallax-img bg-dark opacity-70"
+        style="background-image: url(assets/img/landing/iev.jpg);"></div>
+
+      <!-- Overlay bg -->
+      <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-70 zindex-1"></span>
+
+      <!-- Overlay content -->
+      <div class="container position-relative py-5 zindex-5">
+
+        <!-- Breadcrumb -->
+        <!-- <nav class="py-4" aria-label="breadcrumb">
+                  <ol class="breadcrumb mb-0 py-3">
+                    <li class="breadcrumb-item">
+                      <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Blog Homepage</li>
+                  </ol>
+                </nav> -->
+
+        <!-- Featured article -->
+        <div class="row mb-xxl-5 py-md-4 py-lg-5">
+          <div class="col-lg-6 col-md-7 pb-3 pb-md-0 mb-4 mb-md-5">
+            <!-- <div class="mb-3 fs-lg text-light">
+                      <img src="assets/img/blog/flame.svg" width="24" alt="Flame icon" class="mt-n1 me-1">
+                      Hot Topic
+                    </div> -->
+            <h1 class="display-5 pb-md-3">Data Driven AI Smart Charging Platform</h1>
+            <div class="d-flex flex-wrap mb-md-5 mb-4 pb-md-2 text-white">
+              <div class="mb-2 pe-3 me-3 opacity-80 fs-5 fw-500">운전자 맞춤형 최적의 충전서비스</div>
+            </div>
+            <a href="https://ev.i-on.net/ev-map" target="_blank" class="btn btn-lg btn-primary">
+              EV Station Map
+              <i class="bx bx-search-alt-2 ms-2 me-n1 lead"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 문의하기 -->
+    <section class="bg-dark py-6  jarallax">
+            <!-- Parallax img -->
+            <div>
+            <div class="jarallax-img bg-dark opacity-70 bg-gradient-add"
+            style="background-image: url(assets/img/iev/iev1.jpg); left: 50%;"></div>
+          </div>
+      <div class="container text-left py-1 py-md-4 py-lg-5">
+        <div class="row">
+          <div class="col-md-5"> 
+        <h2 class="h1 text-light">WE PRACTICALIZE</h2>
+        <h2 class="h1 text-primary">EV CHARGING AI SERVICE</h2>
+        <p class="lead pb-3 mb-3 text-light opacity-80">운전자에게 완전히 새로운 충전 경험을 제공합니다 공용충전기를 개인충전기처럼 편리하게 사용할 수 있습니다.</p>
+          </div>
+        <!-- <a href="#" class="btn btn-primary shadow-primary btn-lg mb-1 px-5">문의하기</a> -->
+      </div>
+      </div>
+    </section>
+
+
+    <section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+      <h2 class="h2 pt-2 pt-lg-0 mb-4 mb-lg-4">서비스 구성도</h2>
+      <div class="row row-cols-lg-12">
+        <div class="col-12  shadow-none bg-none position-relative mb-4 mb-lg-5">
+          <img src="assets/img/iev/iev2.png" class="b-block rounded-3 vw-100">
+          <!-- <p class="mt-4 mb-3 mb-lg-0 text-start ">
+            ICS Server, Searcher, Publisher, Thoth, Dynamic, DB Server 등 각 요소들이 분산 서비스 플랫폼 기반으로 이용 패턴에 따라 다양한 하드웨어로 구성되어 서비스에 최적화 된 유연한 환경 구성을 갖추었습니다. 
+          </p> -->
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="container my-5 py-lg-5 py-md-4 pt-2 pb-3">
+      <h2 class="pb-md-0 pb-sm-2 text-center mb-4 mb-sm-5">OUR SERVICE
+      </h2>
+      <!-- <p class="text-center pb-1 pb-sm-0 mb-4 mb-sm-5 col-12 col-md-7 mx-auto">
+        아이온커뮤니케이션즈는 e-Commerce, CMS, Energy, Sports, SaaS 분야에서 최신트렌드 및 안정적인 구축경험을 바탕으로 성공적인 디지털트랜스포메이션을 지원합니다.
+      </p> -->
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 pb-1 mb-3 pb-md-0 mb-md-0">
+          <a href="portfolio-single-project.html">
+            <img src="assets/img/iev/iev3.png" class="rounded-3" width="600" alt="Image">
+          </a>
+        </div>
+        <div class="col-md-6  pt-md-4 pt-lg-5">
+          <div class="ps-md-4 ms-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Nov 18, 2021</div> -->
+            <h2 class="h4">충전소 운영관리 플랫폼</h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICE</a>-->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              클라우드 기반 충전 플랫폼으로 OCPP 프로토콜을 지원합니다.<br><br>
+              실시간으로 충전소 상태를 확인하고, 시간별 이용률 정보를 제공합니다.<br><br>
+              충전 전류, 전압, 온도, SOC 등의 정보를 분석하여 충전기의 고장여부를 사전에 감지함으로써 충전기 운영을 최적화합니다.<br><br>
+              AI 기술이 적용되어 신속하고 정확하게 판단합니다. 
+            </p>
+            <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 order-md-2 pb-1 mb-3 pb-md-0 mb-md-0">
+          <a href="portfolio-single-project.html" class="float-md-end">
+            <img src="assets/img/iev/iev4.png" class="rounded-3" width="600" alt="Image">
+          </a>
+        </div>
+        <div class="col-md-6 order-md-1 pt-md-4 pt-lg-5">
+          <div class="pe-md-4 me-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Nov 9, 2021</div> -->
+            <h2 class="h4">운전자 충전 편의 서비스</h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICS</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              운전자의 선호 충전소, 충전량, 충전시간, 충전요금 등 충전패턴 정보를 시각화하여 제공합니다.<br><br>
+              운전자는 충전소 추천, 충전 스케줄링, 충전요금 절감, 충전 예약 등 다양한 충전 서비스를 이용할 수 있습니다.<br><br>
+              추천 충전기를 통해 운전자는 낮은 충전 비용으로 대기 없는 충전이 가능합니다.
+            <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 pb-1 mb-3 pb-md-0 mb-md-0">
+          <a href="portfolio-single-project.html">
+            <img src="assets/img/iev/iev5.png" class="rounded-3" width="600" alt="Image">
+          </a>
+        </div>
+        <div class="col-md-6 pt-md-4 pt-lg-5">
+          <div class="ps-md-4 ms-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Oct 25, 2021</div> -->
+            <h2 class="h4">공동주택 DR 서비스</h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">ICE Campaign</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              공동주택 충전현황을 모니터링하여 공용부 전력 요금에 대한 누진단계 및 피크전력 정보를 제공합니다.<br><br>
+              DR 서비스에 유리한 충전기를 추천하여 감축효과를 최대화합니다.<br><br>
+              AI 기반 충전 수요예측이 적용되어 충전 피크분산이 가능합니다. 
+            </p>
+            <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="row pb-5 mb-md-4 mb-lg-5">
+        <div class="col-md-6 order-md-2 pb-1 mb-3 pb-md-0 mb-md-0">
+          <a href="portfolio-single-project.html" class="float-md-end">
+            <img src="assets/img/iev/iev6.png" class="rounded-3" width="600" alt="Image">
+          </a>
+        </div>
+        <div class="col-md-6 order-md-1 pt-md-4 pt-lg-5">
+          <div class="pe-md-4 me-md-2">
+            <!-- <div class="fs-sm text-muted mb-1">Aug 23, 2021</div> -->
+            <h2 class="h4">공동주택 전력관리 및 DR서비스
+            </h2>
+            <!-- <a href="#" class="d-table badge bg-faded-primary text-primary fs-sm mb-3">Widsign</a> -->
+            <p class="d-lg-block pb-3 mb-2 mb-md-3">
+              공동주택에 설치된 충전기를 실시간으로 모니터링하여 공용부 전력에 미치는 영향을 감시합니다.<br><br>
+              DR발령 시, 충전기의 감축정보를 제공합니다.<br><br>
+              공용부 전력 과금 정보에 대한 누진단계 및 피크전력 정보를 제공합니다.
+            </p>
+            <!-- <a href="#" class="btn btn-lg btn-outline-primary w-md-auto w-100">바로가기</a> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <section class="bg-img py-6">
+      <div class="container text-center py-1 py-md-4 py-lg-5">
+        <h2 class="h1 text-white">무엇을 도와드릴까요?</h2>
+        <p class="lead pb-3 mb-3 text-eee">하단 문의하기를 통해 궁금한 점을 남겨주시면 확인 후 담당자가 상세히 답변드리도록 하겠습니다.</p>
+        <a href="#" class="btn btn-outline-light shadow-secondary btn-lg mb-1 px-5">문의하기</a>
+      </div>
+    </section>
+  </main>
+
+
+
+  </main>
+
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Back to top button -->
+  <a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+  </a>
+
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="assets/vendor/rellax/rellax.min.js"></script>
+  <script src="assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main Theme Script -->
+  <script src="assets/js/theme.min.js"></script>
+</body>
+
+</html>
