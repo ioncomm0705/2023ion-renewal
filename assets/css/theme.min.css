@@ -19084,6 +19084,11 @@ table thead{
     background: linear-gradient(45deg, black, transparent);
 }
 
+.iev-background-img {
+    background-image: url('assets/img/iev/iev1.jpg');
+    background-size: cover;
+  }
+
 /* 화살표 아이콘 스타일 */
 .scroll-down {
     position: absolute;
