@@ -15475,7 +15475,7 @@ hr.dropdown-divider {
 
 .navbar .dropdown-toggle::after {
     margin-top: .0625rem;
-    font-size: 1.15em
+    font-size: 0rem
 }
 
 .navbar .navbar-nav .dropdown-menu {
@@ -19152,9 +19152,18 @@ table thead{
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
     }
-    
-
 }
+
+@media(max-width: 992px) {
+    .navbar .dropdown-toggle::after{
+        margin-top: .0625rem;
+        font-size: 1.15rem;
+    }
+}
+
+
+
+
 
 /* 이미지슬라이드 */
 .carousel-item img {
