@@ -15478,6 +15478,11 @@ hr.dropdown-divider {
     font-size: 0rem
 }
 
+.dropdown-on .dropdown-toggle::after{
+    margin-top: .0625rem;
+    font-size: 1.15rem
+}
+
 .navbar .navbar-nav .dropdown-menu {
     border: 0;
     border-left: var(--si-dropdown-border-wdth, 1px) solid var(--si-border-color);
