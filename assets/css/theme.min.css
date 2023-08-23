@@ -19089,6 +19089,28 @@ table thead{
     background-size: cover;
   }
 
+  .privacy-list{
+    padding-left: 0;
+    font-size: 14px;
+  }
+
+  .privacy-list li{
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .modal-desc-list{
+    font-size: 14px;
+  }
+
+  .modal-desc-list dt{
+    font-size: 1rem;
+    color: #202020;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+
 /* 화살표 아이콘 스타일 */
 .scroll-down {
     position: absolute;
