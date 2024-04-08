@@ -81,7 +81,6 @@ button:focus {
   outline: none;
 }
 
-
 // Docs container
 .docs-container {
   @include media-breakpoint-up(lg) {
@@ -91,3 +90,4 @@ button:focus {
     padding-right: 20rem;
   }
 }
+

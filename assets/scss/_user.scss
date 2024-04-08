@@ -1,4 +1,16 @@
-// 
+//
 // user.scss
 // Use this to write your custom SCSS
 //
+
+.container {
+  padding: 24px;
+
+  .row .col-12 img {
+    margin: 40px auto;
+  }
+
+  .row .col-12 img + div {
+    margin-bottom: 40px;
+  }
+}
