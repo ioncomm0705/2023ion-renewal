@@ -3,14 +3,26 @@
 // Use this to write your custom SCSS
 //
 
-.container {
-  padding: 24px;
-
-  .row .col-12 img {
-    margin: 40px auto;
+.container .row {
+  margin-top:0;
+  margin-right: 0;
+  margin-left: 0;
+  margin:28px 0 24px 0;
+  > * {
+    padding-right: 0;
+    padding-left: 0;
   }
-
-  .row .col-12 img + div {
-    margin-bottom: 40px;
+  &:first-child {
+    margin:0;
+  }
+  .col-12 {
+    h3 {
+      margin-top:16px;
+      margin-bottom: -16px;
+    }
+    img{
+      margin-bottom:16px;
+    }
   }
 }
+.container .row .col-12 img + div {margin:0;}
