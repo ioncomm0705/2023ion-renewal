@@ -1,5 +1,5 @@
 name: pages-build-deployment
-run-name: pages-build-deployment
+run-name: pages build and deployment
 on: [push]
 jobs:
   Explore-GitHub-Actions:
