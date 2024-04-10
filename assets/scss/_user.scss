@@ -4,9 +4,6 @@
 //
 
 .container .row {
-  margin-top:0;
-  margin-right: 0;
-  margin-left: 0;
   margin:28px 0 24px 0;
   > * {
     padding-right: 0;
@@ -22,7 +19,7 @@
     }
     img{
       margin-bottom:16px;
+      + div {margin:0;}
     }
   }
 }
-.container .row .col-12 img + div {margin:0;}
