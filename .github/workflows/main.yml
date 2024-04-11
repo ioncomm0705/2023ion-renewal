@@ -21,11 +21,11 @@ jobs:
           key: ${{runner.OS}}-build-${{hashFiles('**/yarn.lock')}}
           restore-keys: |
             ${{ runner.OS }}-build-${{ runner.OS }}-
-       - name: Install dependencies
+      - name: Install dependencies
         run: |
           npm install
           npm run build
-       - name: Deploy
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{secrets.ACCESS_TOKEN}}
