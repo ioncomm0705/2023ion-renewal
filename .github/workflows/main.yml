@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    steps:
+      - name: build
+      
+  deployment:
+    runs-on: ubuntu-latest
+    environment:
+      name : github-pages
+      url : https://github.com/ioncomm0705/2023ion-renewal
+    steps:
+      - name: deploy
