@@ -6,27 +6,25 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  build:
+  deploy:
+    environment: github-pages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@master
+      - name: check out
+        uses: actions/checkout@v4
+      - name: set up node
+        uses: actions/setup-node@v4
         with:
-          node-version: 21.x
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{runner.OS}}-build-${{hashFiles('**/yarn.lock')}}
-          restore-keys: |
-            ${{ runner.OS }}-build-${{ runner.OS }}-
-      - name: Install dependencies
-        run: |
-          npm install
-          npm run build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{secrets.ACCESS_TOKEN}}
-          publish_dir: ./build
+          node-version-file: '.nvmrc'
+          cache: npm
+      - name: install
+        run: npm ci
+      - name: test
+        run: npm test
+      - name: build
+        run: npm run build
+      - name: deploy  
+        run: npm run deploy
+      - name: notify
+        if: inputs.notify
+        run: echo 'Deployment completed in ${{ inputs.env }}! 🎉'
