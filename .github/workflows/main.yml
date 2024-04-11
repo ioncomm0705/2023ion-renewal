@@ -25,6 +25,3 @@ jobs:
         run: npm run build
       - name: deploy  
         run: npm run deploy
-      - name: notify
-        if: inputs.notify
-        run: echo 'Deployment completed in ${{ inputs.env }}! 🎉'
