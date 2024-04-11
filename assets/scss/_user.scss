@@ -6,8 +6,7 @@
 .container .row {
   margin:28px 0 24px 0;
   > * {
-    padding-right: 0;
-    padding-left: 0;
+    padding:0;
   }
   &:first-child {
     margin:0;
