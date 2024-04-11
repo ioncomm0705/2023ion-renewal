@@ -1,21 +1,17 @@
-name: Deployment
-on: push
+name: pages-build-deployment
+on: 
+  push :
+    branches: ['main']
+  pull_request :
+    branches: ['main']
 
 jobs:
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo 'run tests'
-
   build:
-    name: build
-    needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: echo 'build'
+      - name : Check out Repository
+      - uses: actions/checkout@v3
+      - run: gulp
 
   deploy:
     name: Deploy
@@ -23,4 +19,4 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
